@@ -1,0 +1,43 @@
+git config --global user.name 'zixingc'
+
+git config --global user.email '974212451@qq.com'
+
+git config --list    /     git config -l
+
+git status    //查看当前文件状态
+ 
+git add Hello.java   //讲Hello.java文件添加到暂存库中
+
+git commit -m “******”  //讲文件提交到版本库中
+
+git add .    //批量将文件添加到暂存库中
+
+git commit -m "Add Two Files"    //将暂存库中的文件提交到版本库中
+
+git commit -a -m "Change Emp.java File"  //直接将修改的文件提交到版本库中（不用区分暂存库和版本库）
+
+git diff Hello.java  //查看文件被修改的对比
+
+git log Hello.java  //查看该文件的提交历史，每次提交都会生成一个commit ID！回滚也是也commit ID为主的
+
+git log //查看全部提交历史记录
+
+git log --pertty=oneline  //格式化显示历史提交记录  （pretty,完美的，漂亮的）
+
+git reset --hard HEAD~1  //回退一步
+
+git reflog  //发现所有针对与版本的操作
+
+git reset --hard bc04c48  //回到某个版本
+
+git checkout  //查看工作区那些文件发生了修改
+
+git checkout hello.java  //将工作区修改了的文件撤销修改
+
+（git没有提供全部checkout的命令，如果有必要，工作区代码全部删除，commit一下再回滚一次）
+
+git reset HEAD hello.java   //将已提交的在暂存区中的文件撤销修改，并恢复到工作区（如需要继续撤销，还需要用上一条命令）
+
+. 工作区 -> 暂存区 ：git add
+. 暂存区 -> MASTER分支 ： git commit
+. 暂存区 -> 工作区 ： git reset HEAD 文件
